@@ -1,20 +1,22 @@
 using UnityEngine;
+using System.Collections;
 
 public class AddButtons : MonoBehaviour
 {
-    [SerialField]
+    [SerializeField]
     private Transform puzzleField;
 
-
-    [SerialField]
+    [SerializeField]
     private GameObject btn;
-    void Awake(){
-        //creating the number of buttons depending on the limit
-        for(int i = 0; i < 8, i++){
+
+    void Awake()
+    {
+        // Creating the number of buttons depending on the limit
+        for (int i = 0; i < 7; i++)
+        {
             GameObject button = Instantiate(btn);
             button.name = "" + i;
-            button.transform.SetParent(puzzleField);
+            button.transform.SetParent(puzzleField, false);
         }
-
     }
 }
